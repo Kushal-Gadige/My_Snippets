@@ -94,7 +94,7 @@
 		  "",
 		  "def missing_values(df):",
 		  "    total = df.isnull().sum().sort_values(ascending=False)",
-		  "    percent = (df.isnull().sum()/df.isnull().count()).sort_values(ascending=False)",
+		  "    percent = (df.isnull().sum()/df.isnull().count()).sort_values(ascending=False).map(\"{:.2f}\".format),
 		  "    df_miss = pd.concat([total, percent], axis=1, keys=['Total', 'Percent'])",
 		  "    return df_miss[df_miss.Percent != 0]",
 		  "missing_values(df)${1:}",
